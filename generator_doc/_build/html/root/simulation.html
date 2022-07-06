@@ -314,14 +314,14 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="simulation">
 <h1>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">¶</a></h1>
-<p>All variables can be find at Variables.h
+<p>All variables can be found at Variables.h
 All neutron attributes and methods can be find at Neutron.h
 Branching tree generation is made on Branch.C</p>
 <div class="section" id="general-overview">
 <h2>General Overview<a class="headerlink" href="#general-overview" title="Permalink to this headline">¶</a></h2>
-<p>The Computational Branching Process can be seen, as an iterative algorithm where a neutron object produce a random number of other neutron objects at each iteration. The neutrons offspring are assigned with randomly chose attributes based on the previous neutron-father attributes. After that, the children-neutrons are allocated in the free space memory region</p>
-<p>A neutron object, is nothing more then a position in the pre-allocated memory. This block of memory, compose what is called in the script, a <em>trunk</em> that carries the attributes of all neutrons in the main loop. After the simulation’s end, a <em>.root</em> file is exported containing at each line, the attributes of each neutron created in the simulation.</p>
-<p>The branching dies off if the offspring are all null. In a computational way, it represents the fact that no new position in the memory is being allocated, while the variable in the main loop advances. The tree will die when the main loop variable reach the free space memory index.</p>
+<p>The Computational Branching Process can be seen, as an iterative algorithm where a neutron object produces random amount of other neutron objects at each iteration. The neutron’s offspring is assigned to randomly chosen attributes based on the previous neutron-father attributes. After that, the children-neutrons are allocated in the free space memory region</p>
+<p>A neutron object, is nothing more then a position in the pre-allocated memory. This block of memory, composes what is called in the script, a <em>trunk</em> that carries the attributes of all neutrons in the main loop. After the simulation’s end, a <em>.root</em> file is exported containing at each line, the attributes of each neutron created in the simulation.</p>
+<p>The branching dies if the offspring is all null. In a computational way, it represents the fact that no new position in the memory is being allocated, while the variable in the main loop advances. The tree will die when the main loop variable reached the free space memory index.</p>
 </div>
 <div class="section" id="basic-simulation-variables">
 <h2>Basic Simulation Variables<a class="headerlink" href="#basic-simulation-variables" title="Permalink to this headline">¶</a></h2>
@@ -334,7 +334,7 @@ Branching tree generation is made on Branch.C</p>
 </div>
 <div class="section" id="dices">
 <h2>Dices<a class="headerlink" href="#dices" title="Permalink to this headline">¶</a></h2>
-<p>Dices are Uniformly Distributed Pseudo-Random numbers generated in the interval [0,1] and feed choice functions for random choices. A better mathematical justification for their use in Monte Carlo Simulations can be found in <span id="id1">[<a class="reference internal" href="../intro.html#id3">DM79</a>]</span>. <a class="reference external" href="https://root.cern.ch/doc/master/classTRandom.html">TRandom</a> class was used for generating random numbers.</p>
+<p>Dices are Uniformly Distributed Pseudo-Random numbers, generated in the interval [0,1] and feed choice functions for random choices. A better mathematical justification for their use in Monte Carlo Simulations can be found in <span id="id1">[<a class="reference internal" href="../intro.html#id3">DM79</a>]</span>. <a class="reference external" href="https://root.cern.ch/doc/master/classTRandom.html">TRandom</a> class was used for generating random numbers.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">TRandom</span> <span class="o">*</span><span class="n">r</span> <span class="o">=</span> <span class="n">new</span> <span class="n">TRandom</span><span class="p">()</span>
 <span class="n">Float_t</span> <span class="n">dice</span> <span class="o">=</span> <span class="n">r</span> <span class="o">-&gt;</span> <span class="n">Rndm</span><span class="p">()</span>
 </pre></div>

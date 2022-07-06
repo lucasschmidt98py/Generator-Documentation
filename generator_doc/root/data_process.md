@@ -18,7 +18,7 @@ const string p_string = "205525";
 
 ## Output
 
-The main Data Processing outputs are .csv filles that can be easily loaded to R or Python. Those are:
+The main Data Processing outputs are .csv files that could be easily loaded to R or Python. Those are:
 
 * Population Time Series of all simulations
 * Probability Distribution
@@ -26,7 +26,7 @@ The main Data Processing outputs are .csv filles that can be easily loaded to R 
 
 ## Processing Time Statistics
 
-In order to control the functions's performance, time counters are implemented using the [TStopwatch](https://root.cern.ch/doc/master/classTStopwatch.html) class. 
+In order to control the functions' performance, time counters are implemented using the [TStopwatch](https://root.cern.ch/doc/master/classTStopwatch.html) class. 
 
 ```
 ------------------%%%%%%%%%%------------------ 
