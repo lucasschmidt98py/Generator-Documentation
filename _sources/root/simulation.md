@@ -1,16 +1,16 @@
 # Simulation
 
-All variables can be find at Variables.h
+All variables can be found at Variables.h
 All neutron attributes and methods can be find at Neutron.h
 Branching tree generation is made on Branch.C
 
 ## General Overview
 
-The Computational Branching Process can be seen, as an iterative algorithm where a neutron object produce a random number of other neutron objects at each iteration. The neutrons offspring are assigned with randomly chose attributes based on the previous neutron-father attributes. After that, the children-neutrons are allocated in the free space memory region
+The Computational Branching Process can be seen, as an iterative algorithm where a neutron object produces random amount of other neutron objects at each iteration. The neutron's offspring is assigned to randomly chosen attributes based on the previous neutron-father attributes. After that, the children-neutrons are allocated in the free space memory region
 
- A neutron object, is nothing more then a position in the pre-allocated memory. This block of memory, compose what is called in the script, a *trunk* that carries the attributes of all neutrons in the main loop. After the simulation's end, a *.root* file is exported containing at each line, the attributes of each neutron created in the simulation.
+ A neutron object, is nothing more then a position in the pre-allocated memory. This block of memory, composes what is called in the script, a *trunk* that carries the attributes of all neutrons in the main loop. After the simulation's end, a *.root* file is exported containing at each line, the attributes of each neutron created in the simulation.
 
- The branching dies off if the offspring are all null. In a computational way, it represents the fact that no new position in the memory is being allocated, while the variable in the main loop advances. The tree will die when the main loop variable reach the free space memory index.
+ The branching dies if the offspring is all null. In a computational way, it represents the fact that no new position in the memory is being allocated, while the variable in the main loop advances. The tree will die when the main loop variable reached the free space memory index.
 
  ## Basic Simulation Variables
 
@@ -25,7 +25,7 @@ Int_t number_of_neutrons ;
 
 ## Dices
 
-Dices are Uniformly Distributed Pseudo-Random numbers generated in the interval [0,1] and feed choice functions for random choices. A better mathematical justification for their use in Monte Carlo Simulations can be found in {cite}`duderstadt1979transport`. [TRandom](https://root.cern.ch/doc/master/classTRandom.html) class was used for generating random numbers.
+Dices are Uniformly Distributed Pseudo-Random numbers, generated in the interval [0,1] and feed choice functions for random choices. A better mathematical justification for their use in Monte Carlo Simulations can be found in {cite}`duderstadt1979transport`. [TRandom](https://root.cern.ch/doc/master/classTRandom.html) class was used for generating random numbers.
 
 ```{code}
 TRandom *r = new TRandom()
