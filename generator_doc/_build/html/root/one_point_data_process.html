@@ -116,17 +116,24 @@
      One-Point Model
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="one_dimension.html">
-     One Dimension Model
-    </a>
-   </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="data_process.html">
    Data Processing
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     One Point
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -216,23 +223,18 @@
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#files-format">
-   Files Format
+  <a class="reference internal nav-link" href="#basic-functions">
+   Basic Functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions">
-   Functions
+  <a class="reference internal nav-link" href="#counting-functions">
+   Counting Functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generator">
-   Generator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#probability-of-extinction">
-   Probability of Extinction
+  <a class="reference internal nav-link" href="#matrix-construction-functions">
+   Matrix Construction Functions
   </a>
  </li>
 </ul>
@@ -256,23 +258,18 @@
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#files-format">
-   Files Format
+  <a class="reference internal nav-link" href="#basic-functions">
+   Basic Functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions">
-   Functions
+  <a class="reference internal nav-link" href="#counting-functions">
+   Counting Functions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generator">
-   Generator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#probability-of-extinction">
-   Probability of Extinction
+  <a class="reference internal nav-link" href="#matrix-construction-functions">
+   Matrix Construction Functions
   </a>
  </li>
 </ul>
@@ -286,53 +283,148 @@
                 
   <div class="tex2jax_ignore mathjax_ignore section" id="one-point">
 <h1>One Point<a class="headerlink" href="#one-point" title="Permalink to this headline">¶</a></h1>
-<p>A neutron is alive at the instant t of time if:</p>
+<p>A Neutron is alive at the time t if:</p>
 <div class="math notranslate nohighlight">
 \[ t_{birth} &lt; t &lt; t_{death} \]</div>
 <p>Besides, by the Week Law of Great Numbers we can say:</p>
 <div class="math notranslate nohighlight">
-\[ p_n(t) = \frac{ S(n , t) }{ \sum S(n,t) } \]</div>
+\[ p_n(t) = \frac{ S(n , t) }{ \sum_{n = 1} S(n,t) } \]</div>
 <p>Where</p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\( S(n,t) = \)</span> Number of simulations with <span class="math notranslate nohighlight">\(n\)</span> neutrons alived in time <span class="math notranslate nohighlight">\(t\)</span></p></li>
-<li><p><span class="math notranslate nohighlight">\( \sum S(n,t) = \)</span> Total number of simulations</p></li>
+<li><p><span class="math notranslate nohighlight">\( p_n(t)      = \)</span> Probability of finding n alive neutrons in time <span class="math notranslate nohighlight">\(t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( S(n,t)      = \)</span> Number of simulations with <span class="math notranslate nohighlight">\(n\)</span> alive neutrons in time <span class="math notranslate nohighlight">\(t\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\( \sum_{n = 1} S(n,t) = \)</span> Total number of simulations</p></li>
 </ul>
-<div class="section" id="files-format">
-<h2>Files Format<a class="headerlink" href="#files-format" title="Permalink to this headline">¶</a></h2>
-<p>For futher computations, Python will always read the .csv files columns in the following order of neutrons atributtes:</p>
-<ul class="simple">
-<li><p>column 0 - Generation</p></li>
-<li><p>column 1 - Time of Birth</p></li>
-<li><p>column 2 - Time of Death</p></li>
-</ul>
-</div>
-<div class="section" id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">mk_df(path</span> <span class="pre">,</span> <span class="pre">n_sim)</span></code></strong></em> : Read the n_sim simulations on the data path folder. Return a dataframe with all C++ output .csv binded in a dataframe</p>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">time_count(t</span> <span class="pre">,</span> <span class="pre">matrix):</span></code></strong></em> : Count the number of alive neutrons for a float t in the binded dataframe</p>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">time_count_arr(t_arr</span> <span class="pre">,</span> <span class="pre">matrix)</span></code></strong></em> : Count the number of alived neutrons in a dataframe, for an vector of time. Iterates over the number of t_arr values using the function time_count(t,df) for each entry of the array</p>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">mk_pop_df(path</span> <span class="pre">,</span> <span class="pre">t_arr</span> <span class="pre">,</span> <span class="pre">n_sim)</span></code></strong></em> : Output a population dataframe counting with index = t_arr and columns = ‘number of simulations in df’. Iterates over the number of simulations present in df. Recive as input the data path folder, an array of time and the number of simulations</p>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">mk_freq_prob(matrix)</span></code></strong></em> : Take as input the population matrix counting and output a frequency matrix, probability matrix and an array of counting values that appeared on the population counting matrix</p>
-</div>
-<div class="section" id="generator">
-<h2>Generator<a class="headerlink" href="#generator" title="Permalink to this headline">¶</a></h2>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">polinomial(array)</span></code></strong></em>  :  Create a Square matrix ( size(array) X size(array) ) where each line is a power array of each input array entry</p>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">mk_g(matrix</span> <span class="pre">,</span> <span class="pre">z_size)</span></code></strong></em> : Calculates de generation function g(z,t) for a given population counting matrix made by the function mk_pop_df. By default , z is an array in the interval [-1,1] with 100 points.</p>
-</div>
-<div class="section" id="probability-of-extinction">
-<h2>Probability of Extinction<a class="headerlink" href="#probability-of-extinction" title="Permalink to this headline">¶</a></h2>
-<p>Once the probability matrix has been computed using the function <em><strong><code class="docutils literal notranslate"><span class="pre">mk_freq_prob</span></code></strong></em> , the Probability of Extinction is simply the assintotic value of the first column of the matrix and can be called by:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="n">functions</span><span class="o">.</span><span class="n">mk_pop_df</span><span class="p">(</span><span class="n">path</span> <span class="p">,</span> <span class="n">t_arr</span> <span class="p">,</span> <span class="n">n_sim</span><span class="p">)</span> <span class="p">)</span>
+<div class="section" id="basic-functions">
+<h2>Basic Functions<a class="headerlink" href="#basic-functions" title="Permalink to this headline">¶</a></h2>
+<p><em><strong><code class="docutils literal notranslate"><span class="pre">vector&lt;vector&lt;Float_t&gt;&gt;</span> <span class="pre">create_matrix()</span></code></strong></em> : Load the {p_string}.root file to C. The reading follows the columns structures created at the simulation</p>
+<p align="center">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Input :
+    void
 
-<span class="n">frequency_array</span> <span class="p">,</span> <span class="n">probability_array</span> <span class="p">,</span> <span class="n">all_values</span> <span class="o">=</span> <span class="n">functions</span><span class="o">.</span><span class="n">mk_freq_prob</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
-
-<span class="n">frequency_df</span>        <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="n">frequency_array</span>   <span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">all_values</span> <span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">t_arr</span> <span class="p">)</span>
-<span class="n">probability_df</span>      <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="n">probability_array</span> <span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">all_values</span> <span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">t_arr</span> <span class="p">)</span>
-
-<span class="n">probability_df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+Output:
+    vector&lt;vector&lt;Float_t&gt;&gt; return_matrix - Root Matrix containing all neutron attributes from all simulations. 
 </pre></div>
 </div>
+</p>
+<p><em><strong><code class="docutils literal notranslate"><span class="pre">vector&lt;vector&lt;Float_t&gt;&gt;</span> <span class="pre">filter_simulation(</span> <span class="pre">Int_t</span> <span class="pre">sim</span> <span class="pre">,</span> <span class="pre">vector&lt;vector&lt;Float_t&gt;&gt;</span> <span class="pre">matrix</span> <span class="pre">)()</span></code></strong></em> : Select a trunk for a given simulation in a given Root Matrix</p>
+<p align="center">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Input :
+    
+    Int_t sim - Simulation Number
+
+    vector&lt;vector&lt;Float_t&gt;&gt;  matrix - Root Matrix
+
+Output:
+    vector&lt;vector&lt;Float_t&gt;&gt; return_matrix - Trunk from simulation sim 
+</pre></div>
 </div>
+</p>
+<p><em><strong><code class="docutils literal notranslate"><span class="pre">vector&lt;Float_t&gt;</span> <span class="pre">linspace(</span> <span class="pre">Float_t</span> <span class="pre">t0</span> <span class="pre">,</span> <span class="pre">Float_t</span> <span class="pre">tf</span> <span class="pre">,</span> <span class="pre">Int_t</span> <span class="pre">n_spaces</span> <span class="pre">)</span></code></strong></em> : Create a partition of the interval [ <span class="math notranslate nohighlight">\(t_0\)</span> , <span class="math notranslate nohighlight">\(t_f\)</span> ] in <span class="math notranslate nohighlight">\(n_{spaces}\)</span> intervals</p>
+<p align="center">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Input :
+    
+    Float_t t0 - Initial time
+
+    Float_t tf - Final time
+
+    Int_t n_spaces - Number of Intervals
+
+Output:
+    vector&lt;Float_t&gt; return_arr - Partitioned interval array
+</pre></div>
+</div>
+</p>
+<p><em><strong><code class="docutils literal notranslate"><span class="pre">vector&lt;Int_t&gt;</span> <span class="pre">arange(Int_t</span> <span class="pre">size)</span></code></strong></em> : Return a sequency of natural numbers smaller then size + 1</p>
+<p align="center">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Input :
+    
+    Int_t size - Sequence limit
+
+Output:
+    vector&lt;Float_t&gt; return_arr - Sequence of naturals
+</pre></div>
+</div>
+</p>
+<p><em><strong><code class="docutils literal notranslate"><span class="pre">Int_t</span> <span class="pre">find_max(</span> <span class="pre">vector&lt;vector&lt;Int_t&gt;&gt;</span> <span class="pre">matrix</span> <span class="pre">)</span></code></strong></em> : Find the maximum natural number in a given matrix of natural numbers</p>
+<p align="center">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Input :
+    
+    vector&lt;vector&lt;Int_t&gt;&gt; matrix - Matrix of natural numbers
+
+Output:
+    Int_t max - Maximum number 
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="counting-functions">
+<h2>Counting Functions<a class="headerlink" href="#counting-functions" title="Permalink to this headline">¶</a></h2>
+<p><em><strong><code class="docutils literal notranslate"><span class="pre">Int_t</span> <span class="pre">time_count(</span> <span class="pre">Float_t</span> <span class="pre">t</span> <span class="pre">,</span> <span class="pre">vector&lt;vector&lt;Float_t&gt;&gt;</span> <span class="pre">matrix</span> <span class="pre">)</span></code></strong></em> : Count the number of alive neutrons for a given time <span class="math notranslate nohighlight">\(t\)</span> in a given trunk</p>
+<p align="center">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Input :
+    
+    Float_t t - Instant of time
+
+    vector&lt;vector&lt;Float_t&gt;&gt; matrix - Trunk from a given simulation
+
+Output:
+    Int_t count - Number of alive neutrons at the time t 
+</pre></div>
+</div>
+</p>
+<p><em><strong><code class="docutils literal notranslate"><span class="pre">Int_t</span> <span class="pre">value_count(</span> <span class="pre">Int_t</span> <span class="pre">value</span> <span class="pre">,</span> <span class="pre">vector&lt;Int_t&gt;</span> <span class="pre">value_arr</span> <span class="pre">)</span></code></strong></em> : Count the number of times that a natural number pop up in a vector of natural numbers</p>
+<p align="center">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Input :
+    
+    Int_t value - Counting value
+
+    vector&lt;Int_t&gt;&gt; value_arr - Vector of natural numbers
+
+Output:
+    Int_t - Number of alive neutrons at the time t 
+</pre></div>
+</div>
+</p>
+</div>
+<div class="section" id="matrix-construction-functions">
+<h2>Matrix Construction Functions<a class="headerlink" href="#matrix-construction-functions" title="Permalink to this headline">¶</a></h2>
+<p><em><strong><code class="docutils literal notranslate"><span class="pre">vector&lt;vector&lt;Int_t&gt;&gt;</span> <span class="pre">population_matrix(</span> <span class="pre">vector&lt;Float_t&gt;</span> <span class="pre">time_arr</span> <span class="pre">,</span> <span class="pre">vector&lt;vector&lt;Float_t&gt;&gt;</span> <span class="pre">matrix</span> <span class="pre">)</span></code></strong></em> : Construct the population matrix indexed by the time_arr argument.</p>
+<p><span class="math notranslate nohighlight">\( i = \)</span> time_arr index</p>
+<p><span class="math notranslate nohighlight">\( j = \)</span> Simulation number</p>
+<p><span class="math notranslate nohighlight">\( [N_{ij}] = \)</span> Number of alive neutrons <span class="math notranslate nohighlight">\( N_{j}(t) \)</span></p>
+<p align="center">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Input :
+    
+    vector&lt;Float_t&gt; time_arr - Time array partition
+
+    vector&lt;vector&lt;Float_t&gt;&gt; matrix - Root Matrix
+
+Output:
+    vector&lt;vector&lt;Int_t&gt;&gt; return_matrix- Neutron population time series matrix for each simulation  
+</pre></div>
+</div>
+</p>
+<p><em><strong><code class="docutils literal notranslate"><span class="pre">vector&lt;vector&lt;Int_t&gt;&gt;</span> <span class="pre">freq_matrix(</span> <span class="pre">vector&lt;Float_t&gt;</span> <span class="pre">time_arr</span> <span class="pre">,</span> <span class="pre">vector&lt;vector&lt;Float_t&gt;&gt;</span> <span class="pre">matrix</span> <span class="pre">)</span></code></strong></em> : Construct the simulation frequency values counting.</p>
+<p><span class="math notranslate nohighlight">\( i = \)</span> time_arr index</p>
+<p><span class="math notranslate nohighlight">\( j = \text{Neutron population value} \in \{ 1 , 2 , 3 , \dots \max{\text{Root Matrix}} \}\)</span></p>
+<p><span class="math notranslate nohighlight">\( [s_{ij}] = \)</span> Counting of simulations <span class="math notranslate nohighlight">\(S_j(t)\)</span></p>
+<p><em><strong><code class="docutils literal notranslate"><span class="pre">vector&lt;vector&lt;Float_t&gt;&gt;</span> <span class="pre">prob_matrix(</span> <span class="pre">vector&lt;vector&lt;Int_t&gt;&gt;</span> <span class="pre">freq</span> <span class="pre">,</span> <span class="pre">Int_t</span> <span class="pre">n_sim</span> <span class="pre">)</span></code></strong></em> : Construct the probability distribution time series .</p>
+<p><span class="math notranslate nohighlight">\( i = \)</span> time_arr index</p>
+<p><span class="math notranslate nohighlight">\( j = \text{Neutron population value} \in \{ 1 , 2 , 3 , \dots \max{\text{Root Matrix}} \}\)</span></p>
+<p><span class="math notranslate nohighlight">\( [p_{ij}] = \)</span> Neutron’s population probability <span class="math notranslate nohighlight">\( p_j(t) \)</span></p>
+<p align="center">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Input :
+    
+    vector&lt;vector&lt;Int_t&gt;&gt; freq - Matrix of Neutron&#39;s population value frequencies
+
+    Int_t n_sim - Number of simulations
+
+Output:
+    vector&lt;vector&lt;Float_t&gt;&gt; return_matrix - Probability Distribution time series 
+</pre></div>
+</div>
+</p></div>
 </div>
 
     <script type="text/x-thebe-config">

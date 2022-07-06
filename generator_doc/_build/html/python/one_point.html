@@ -115,17 +115,24 @@
      One-Point Model
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="../root/one_dimension.html">
-     One Dimension Model
-    </a>
-   </li>
   </ul>
  </li>
- <li class="toctree-l1">
+ <li class="toctree-l1 has-children">
   <a class="reference internal" href="../root/data_process.html">
    Data Processing
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="../root/one_point_data_process.html">
+     One Point
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -209,34 +216,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show noprint">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Conteúdo
-            </div>
-            <nav id="bd-toc-nav" aria-label="Page">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#files-format">
-   Files Format
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions">
-   Functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generator">
-   Generator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#probability-of-extinction">
-   Probability of Extinction
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -249,34 +228,6 @@
                 <div id="print-main-content">
                     <div id="jb-print-toc">
                         
-                        <div>
-                            <h2> Conteúdo </h2>
-                        </div>
-                        <nav aria-label="Page">
-                            <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#files-format">
-   Files Format
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#functions">
-   Functions
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#generator">
-   Generator
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#probability-of-extinction">
-   Probability of Extinction
-  </a>
- </li>
-</ul>
-
-                        </nav>
                     </div>
                 </div>
             </div>
@@ -289,10 +240,6 @@
 <div class="math notranslate nohighlight">
 \[ t_{birth} &lt; t &lt; t_{death} \]</div>
 <p>, is the base of all countings in the Python core for the One Point Model</p>
-<p>This counting is translated in the code by the variable cond:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">cond</span> <span class="o">=</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="mi">1</span><span class="p">]</span> <span class="o">&lt;</span> <span class="n">t</span><span class="p">)</span> <span class="o">&amp;</span> <span class="p">(</span><span class="n">matrix</span><span class="p">[</span><span class="n">q</span><span class="p">][</span><span class="mi">2</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">t</span><span class="p">)</span>
-</pre></div>
-</div>
 <p>Besides, but the Week Law of Great Numbers we can say:</p>
 <div class="math notranslate nohighlight">
 \[ p_n(t) = \frac{ S(n , t) }{ \sum S(n,t) } \]</div>
@@ -301,42 +248,6 @@
 <li><p><span class="math notranslate nohighlight">\( S(n,t) = \)</span> Number of simulations with <span class="math notranslate nohighlight">\(n\)</span> neutrons alived in time <span class="math notranslate nohighlight">\(t\)</span></p></li>
 <li><p><span class="math notranslate nohighlight">\( \sum S(n,t) = \)</span> Total number of simulations</p></li>
 </ul>
-<div class="section" id="files-format">
-<h2>Files Format<a class="headerlink" href="#files-format" title="Permalink to this headline">¶</a></h2>
-<p>For futher computations, Python will always read the .csv files columns in the following order of neutrons atributtes:</p>
-<ul class="simple">
-<li><p>column 0 - Generation</p></li>
-<li><p>column 1 - Time of Birth</p></li>
-<li><p>column 2 - Time of Death</p></li>
-</ul>
-</div>
-<div class="section" id="functions">
-<h2>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h2>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">mk_df(path</span> <span class="pre">,</span> <span class="pre">n_sim)</span></code></strong></em> : Read the n_sim simulations on the data path folder. Return a dataframe with all C++ output .csv binded in a dataframe</p>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">time_count(t</span> <span class="pre">,</span> <span class="pre">matrix):</span></code></strong></em> : Count the number of alive neutrons for a float t in the binded dataframe</p>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">time_count_arr(t_arr</span> <span class="pre">,</span> <span class="pre">matrix)</span></code></strong></em> : Count the number of alived neutrons in a dataframe, for an vector of time. Iterates over the number of t_arr values using the function time_count(t,df) for each entry of the array</p>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">mk_pop_df(path</span> <span class="pre">,</span> <span class="pre">t_arr</span> <span class="pre">,</span> <span class="pre">n_sim)</span></code></strong></em> : Output a population dataframe counting with index = t_arr and columns = ‘number of simulations in df’. Iterates over the number of simulations present in df. Recive as input the data path folder, an array of time and the number of simulations</p>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">mk_freq_prob(matrix)</span></code></strong></em> : Take as input the population matrix counting and output a frequency matrix, probability matrix and an array of counting values that appeared on the population counting matrix</p>
-</div>
-<div class="section" id="generator">
-<h2>Generator<a class="headerlink" href="#generator" title="Permalink to this headline">¶</a></h2>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">polinomial(array)</span></code></strong></em>  :  Create a Square matrix ( size(array) X size(array) ) where each line is a power array of each input array entry</p>
-<p><em><strong><code class="docutils literal notranslate"><span class="pre">mk_g(matrix</span> <span class="pre">,</span> <span class="pre">z_size)</span></code></strong></em> : Calculates de generation function g(z,t) for a given population counting matrix made by the function mk_pop_df. By default , z is an array in the interval [-1,1] with 100 points.</p>
-</div>
-<div class="section" id="probability-of-extinction">
-<h2>Probability of Extinction<a class="headerlink" href="#probability-of-extinction" title="Permalink to this headline">¶</a></h2>
-<p>Once the probability matrix has been computed using the function <em><strong><code class="docutils literal notranslate"><span class="pre">mk_freq_prob</span></code></strong></em> , the Probability of Extinction is simply the assintotic value of the first column of the matrix and can be called by:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">matrix</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span> <span class="n">functions</span><span class="o">.</span><span class="n">mk_pop_df</span><span class="p">(</span><span class="n">path</span> <span class="p">,</span> <span class="n">t_arr</span> <span class="p">,</span> <span class="n">n_sim</span><span class="p">)</span> <span class="p">)</span>
-
-<span class="n">frequency_array</span> <span class="p">,</span> <span class="n">probability_array</span> <span class="p">,</span> <span class="n">all_values</span> <span class="o">=</span> <span class="n">functions</span><span class="o">.</span><span class="n">mk_freq_prob</span><span class="p">(</span><span class="n">matrix</span><span class="p">)</span>
-
-<span class="n">frequency_df</span>        <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="n">frequency_array</span>   <span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">all_values</span> <span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">t_arr</span> <span class="p">)</span>
-<span class="n">probability_df</span>      <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span> <span class="n">probability_array</span> <span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">all_values</span> <span class="p">,</span> <span class="n">index</span> <span class="o">=</span> <span class="n">t_arr</span> <span class="p">)</span>
-
-<span class="n">probability_df</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-</pre></div>
-</div>
-</div>
 </div>
 
     <script type="text/x-thebe-config">

@@ -1,58 +1,168 @@
 # One Point
 
-A neutron is alive at the instant t of time if:
+A Neutron is alive at the time t if:
 
 $$ t_{birth} < t < t_{death} $$
 
 Besides, by the Week Law of Great Numbers we can say:
 
-$$ p_n(t) = \frac{ S(n , t) }{ \sum S(n,t) } $$
+$$ p_n(t) = \frac{ S(n , t) }{ \sum_{n = 1} S(n,t) } $$
 
 Where
 
-* $ S(n,t) = $ Number of simulations with $n$ neutrons alived in time $t$
-* $ \sum S(n,t) = $ Total number of simulations 
+* $ p_n(t)      = $ Probability of finding n alive neutrons in time $t$ 
+* $ S(n,t)      = $ Number of simulations with $n$ alive neutrons in time $t$
+* $ \sum_{n = 1} S(n,t) = $ Total number of simulations 
 
-## Files Format
 
-For futher computations, Python will always read the .csv files columns in the following order of neutrons atributtes:
+## Basic Functions 
 
-* column 0 - Generation
+***`vector<vector<Float_t>> create_matrix()`*** : Load the {p_string}.root file to C. The reading follows the columns structures created at the simulation
 
-* column 1 - Time of Birth
-
-* column 2 - Time of Death
-
-## Functions
-
-***`mk_df(path , n_sim)`*** : Read the n_sim simulations on the data path folder. Return a dataframe with all C++ output .csv binded in a dataframe  
-
-***`time_count(t , matrix):`*** : Count the number of alive neutrons for a float t in the binded dataframe
-
-***`time_count_arr(t_arr , matrix)`*** : Count the number of alived neutrons in a dataframe, for an vector of time. Iterates over the number of t_arr values using the function time_count(t,df) for each entry of the array
-
-***`mk_pop_df(path , t_arr , n_sim)`*** : Output a population dataframe counting with index = t_arr and columns = 'number of simulations in df'. Iterates over the number of simulations present in df. Recive as input the data path folder, an array of time and the number of simulations
+<p align="center">
     
-***`mk_freq_prob(matrix)`*** : Take as input the population matrix counting and output a frequency matrix, probability matrix and an array of counting values that appeared on the population counting matrix
+    Input :
+        void
+    
+    Output:
+        vector<vector<Float_t>> return_matrix - Root Matrix containing all neutron attributes from all simulations. 
+</p>
 
-## Generator
+***`vector<vector<Float_t>> filter_simulation( Int_t sim , vector<vector<Float_t>> matrix )()`*** : Select a trunk for a given simulation in a given Root Matrix
 
-***`polinomial(array)`***  :  Create a Square matrix ( size(array) X size(array) ) where each line is a power array of each input array entry 
+<p align="center">
+    
+    Input :
+        
+        Int_t sim - Simulation Number
 
-***`mk_g(matrix , z_size)`*** : Calculates de generation function g(z,t) for a given population counting matrix made by the function mk_pop_df. By default , z is an array in the interval [-1,1] with 100 points.
+        vector<vector<Float_t>>  matrix - Root Matrix
+    
+    Output:
+        vector<vector<Float_t>> return_matrix - Trunk from simulation sim 
+</p>
 
-## Probability of Extinction
+***`vector<Float_t> linspace( Float_t t0 , Float_t tf , Int_t n_spaces )`*** : Create a partition of the interval [ $t_0$ , $t_f$ ] in $n_{spaces}$ intervals
 
-Once the probability matrix has been computed using the function ***`mk_freq_prob`*** , the Probability of Extinction is simply the assintotic value of the first column of the matrix and can be called by: 
+<p align="center">
+    
+    Input :
+        
+        Float_t t0 - Initial time
+
+        Float_t tf - Final time
+
+        Int_t n_spaces - Number of Intervals
+
+    Output:
+        vector<Float_t> return_arr - Partitioned interval array
+</p>
+
+***`vector<Int_t> arange(Int_t size)`*** : Return a sequency of natural numbers smaller then size + 1
+
+<p align="center">
+    
+    Input :
+        
+        Int_t size - Sequence limit
+
+    Output:
+        vector<Float_t> return_arr - Sequence of naturals
+</p>
+
+***`Int_t find_max( vector<vector<Int_t>> matrix )`*** : Find the maximum natural number in a given matrix of natural numbers
+ 
+<p align="center">
+    
+    Input :
+        
+        vector<vector<Int_t>> matrix - Matrix of natural numbers
+    
+    Output:
+        Int_t max - Maximum number 
+</p>
 
 
-```{code}
-matrix = np.array( functions.mk_pop_df(path , t_arr , n_sim) )
+## Counting Functions
 
-frequency_array , probability_array , all_values = functions.mk_freq_prob(matrix)
+***`Int_t time_count( Float_t t , vector<vector<Float_t>> matrix )`*** : Count the number of alive neutrons for a given time $t$ in a given trunk
+ 
+<p align="center">
+    
+    Input :
+        
+        Float_t t - Instant of time
 
-frequency_df        = pd.DataFrame( frequency_array   , columns = all_values , index = t_arr )
-probability_df      = pd.DataFrame( probability_array , columns = all_values , index = t_arr )
+        vector<vector<Float_t>> matrix - Trunk from a given simulation
+    
+    Output:
+        Int_t count - Number of alive neutrons at the time t 
+</p>
 
-probability_df[0]
-```
+***`Int_t value_count( Int_t value , vector<Int_t> value_arr )`*** : Count the number of times that a natural number pop up in a vector of natural numbers 
+
+<p align="center">
+    
+    Input :
+        
+        Int_t value - Counting value
+
+        vector<Int_t>> value_arr - Vector of natural numbers
+    
+    Output:
+        Int_t - Number of alive neutrons at the time t 
+</p>
+
+## Matrix Construction Functions
+
+***`vector<vector<Int_t>> population_matrix( vector<Float_t> time_arr , vector<vector<Float_t>> matrix )`*** : Construct the population matrix indexed by the time_arr argument. 
+
+
+$ i = $ time_arr index
+
+$ j = $ Simulation number
+
+$ [N_{ij}] = $ Number of alive neutrons $ N_{j}(t) $
+
+<p align="center">
+    
+    Input :
+        
+        vector<Float_t> time_arr - Time array partition
+
+        vector<vector<Float_t>> matrix - Root Matrix
+    
+    Output:
+        vector<vector<Int_t>> return_matrix- Neutron population time series matrix for each simulation  
+</p>
+
+
+
+***`vector<vector<Int_t>> freq_matrix( vector<Float_t> time_arr , vector<vector<Float_t>> matrix )`*** : Construct the simulation frequency values counting.
+
+$ i = $ time_arr index
+
+$ j = \text{Neutron population value} \in \{ 1 , 2 , 3 , \dots \max{\text{Root Matrix}} \}$ 
+
+$ [s_{ij}] = $ Counting of simulations $S_j(t)$ 
+
+
+***`vector<vector<Float_t>> prob_matrix( vector<vector<Int_t>> freq , Int_t n_sim )`*** : Construct the probability distribution time series . 
+
+$ i = $ time_arr index
+
+$ j = \text{Neutron population value} \in \{ 1 , 2 , 3 , \dots \max{\text{Root Matrix}} \}$
+
+$ [p_{ij}] = $ Neutron's population probability $ p_j(t) $ 
+
+<p align="center">
+    
+    Input :
+        
+        vector<vector<Int_t>> freq - Matrix of Neutron's population value frequencies
+
+        Int_t n_sim - Number of simulations
+    
+    Output:
+        vector<vector<Float_t>> return_matrix - Probability Distribution time series 
+</p>

@@ -8,8 +8,7 @@ chapters:
 - file: root/simulation.md
   sections:
   - file: root/one_point.md
-  - file: root/one_dimension.md
 
-- file: root/data_process.ipynb
+- file: root/data_process.md
   sections:
-  - file: root/one_point_data_process.md
+    - file: root/one_point_data_process.md

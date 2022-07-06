@@ -247,13 +247,10 @@ File Structure:
     Columns : Generation , Birth Time , Death Time , Simulation Index  
 </p>
 
-<p align="center">
 
 | gen  | t_birth | t_death | sim  |
 | :--- | :------ | :------ | :--- |
 | 0    | 0       | $t_0$   | 0    |
-
-</p>
 
 
 

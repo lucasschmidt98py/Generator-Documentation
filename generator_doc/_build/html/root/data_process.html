@@ -55,7 +55,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="One Point" href="one_point_data_process.html" />
-    <link rel="prev" title="One Dimension Model" href="one_dimension.html" />
+    <link rel="prev" title="One-Point Model" href="one_point.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="None">
     
@@ -115,17 +115,24 @@
      One-Point Model
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="one_dimension.html">
-     One Dimension Model
-    </a>
-   </li>
   </ul>
  </li>
- <li class="toctree-l1 current active">
+ <li class="toctree-l1 current active has-children">
   <a class="current reference internal" href="#">
    Data Processing
   </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="one_point_data_process.html">
+     One Point
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -168,9 +175,9 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="../_sources/root/data_process.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="../_sources/root/data_process.md"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Baixar arquivo fonte" data-toggle="tooltip"
-                data-placement="left">.ipynb</button></a>
+                data-placement="left">.md</button></a>
         <!-- Download PDF via print -->
         <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir em PDF"
                 onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
@@ -204,23 +211,6 @@
 
             <!-- Launch buttons -->
 
-<div class="dropdown-buttons-trigger">
-    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
-        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
-    <div class="dropdown-buttons">
-        
-        <a class="binder-button" href="https://mybinder.org/v2/gh/lucasschmidt98py/Generator-Documentation/master?urlpath=tree/docs/root/data_process.ipynb"><button type="button"
-                class="btn btn-secondary topbarbtn" title="Lançamento Binder" data-toggle="tooltip"
-                data-placement="left"><img class="binder-button-logo"
-                    src="../_static/images/logo_binder.svg"
-                    alt="Interact on binder">Binder</button></a>
-        
-        
-        
-        
-    </div>
-</div>
-
         </div>
 
         <!-- Table of contents -->
@@ -231,31 +221,24 @@
             </div>
             <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Data Processing
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#general-overview">
-     General Overview
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#neutron-s-population-time-series">
-   Neutron’s population time series
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-overview">
+   General Overview
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#probability-distribution-time-series">
-   Probability distribution time series
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#root-file-switcher">
+   Root file switcher
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#frequency-time-series-teste">
-   Frequency time series  Teste
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#output">
+   Output
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#processing-time-statistics">
+   Processing Time Statistics
   </a>
  </li>
 </ul>
@@ -278,31 +261,24 @@
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Data Processing
-  </a>
-  <ul class="visible nav section-nav flex-column">
-   <li class="toc-h2 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#general-overview">
-     General Overview
-    </a>
-   </li>
-  </ul>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#neutron-s-population-time-series">
-   Neutron’s population time series
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#general-overview">
+   General Overview
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#probability-distribution-time-series">
-   Probability distribution time series
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#root-file-switcher">
+   Root file switcher
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#frequency-time-series-teste">
-   Frequency time series  Teste
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#output">
+   Output
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#processing-time-statistics">
+   Processing Time Statistics
   </a>
  </li>
 </ul>
@@ -314,964 +290,58 @@
             
               <div>
                 
-  <div class="cell tag_remove-input docutils container">
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="data-processing">
+  <div class="tex2jax_ignore mathjax_ignore section" id="data-processing">
 <h1>Data Processing<a class="headerlink" href="#data-processing" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="general-overview">
 <h2>General Overview<a class="headerlink" href="#general-overview" title="Permalink to this headline">¶</a></h2>
 <p>After the simulation , a <em>.root</em> fille will be written in the data folder. Root filles are an efficient way for both, writing and reading a big amount of tabular data in C/C++ . Besides, those filles are quite lite and much less heavy then exporting many .csv filles to a folder. The usage of <em>.root</em> filles allows to explore the high C performance together with the <a class="reference external" href="https://root.cern.ch/doc/master/classTThread.html">MultiThread Class</a> giving possibilities to explore a large amount of data , natural from Monte-Carlo simulations.</p>
 <p>Efficiency of processing is a key point to this part of the project since many simulations may involve a big amount of rows( Number of Neutrons X Number of Simulations ) , especially in strongly supercritical cases.</p>
-<p>The main outputs of the Data Processing are .csv filles that can be easily loaded to R or Python</p>
-<p>An example of simulation of a supercritical scenario data processing</p>
+</div>
+<div class="section" id="root-file-switcher">
+<h2>Root file switcher<a class="headerlink" href="#root-file-switcher" title="Permalink to this headline">¶</a></h2>
+<p>A root file can be processed by passing the file name as a string to the global variable p_string at MCAnalysis.C</p>
+<p>Example:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">const</span> <span class="n">string</span> <span class="n">p_string</span> <span class="o">=</span> <span class="s2">&quot;205525&quot;</span><span class="p">;</span>
+</pre></div>
 </div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="neutron-s-population-time-series">
-<h1>Neutron’s population time series<a class="headerlink" href="#neutron-s-population-time-series" title="Permalink to this headline">¶</a></h1>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Simulation 0</th>
-      <th>Simulation 1</th>
-      <th>Simulation 2</th>
-      <th>Simulation 3</th>
-      <th>Simulation 4</th>
-      <th>Simulation 5</th>
-      <th>Simulation 6</th>
-      <th>Simulation 7</th>
-      <th>Simulation 8</th>
-      <th>Simulation 9</th>
-      <th>...</th>
-      <th>Simulation 989</th>
-      <th>Simulation 990</th>
-      <th>Simulation 991</th>
-      <th>Simulation 992</th>
-      <th>Simulation 993</th>
-      <th>Simulation 994</th>
-      <th>Simulation 995</th>
-      <th>Simulation 996</th>
-      <th>Simulation 997</th>
-      <th>Simulation 998</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0.000000</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>0.100200</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>0.200401</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>0.300601</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>0.400802</th>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>...</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>1</td>
-      <td>2</td>
-      <td>1</td>
-      <td>1</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>99.599198</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2013</td>
-      <td>0</td>
-      <td>426</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>99.699399</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2021</td>
-      <td>0</td>
-      <td>432</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>99.799599</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2015</td>
-      <td>0</td>
-      <td>431</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>99.899800</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2016</td>
-      <td>0</td>
-      <td>428</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>100.000000</th>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>2017</td>
-      <td>0</td>
-      <td>438</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-<p>999 rows × 999 columns</p>
-</div></div></div>
+<div class="section" id="output">
+<h2>Output<a class="headerlink" href="#output" title="Permalink to this headline">¶</a></h2>
+<p>The main Data Processing outputs are .csv filles that can be easily loaded to R or Python. Those are:</p>
+<ul class="simple">
+<li><p>Population Time Series of all simulations</p></li>
+<li><p>Probability Distribution</p></li>
+<li><p>Frequency Time Series for all simulations</p></li>
+</ul>
 </div>
+<div class="section" id="processing-time-statistics">
+<h2>Processing Time Statistics<a class="headerlink" href="#processing-time-statistics" title="Permalink to this headline">¶</a></h2>
+<p>In order to control the functions’s performance, time counters are implemented using the <a class="reference external" href="https://root.cern.ch/doc/master/classTStopwatch.html">TStopwatch</a> class.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">------------------%%%%%%%%%%------------------</span> 
+ <span class="o">************</span> <span class="n">Program</span> <span class="n">Statistics</span> <span class="o">************</span>  
+                                               
+                 <span class="n">Reading</span> <span class="n">Time</span><span class="p">:</span>                 
+<span class="n">Real</span> <span class="n">time</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="n">CP</span> <span class="n">time</span> <span class="mf">0.050</span>
+<span class="o">----------------------------------------------</span> 
+       <span class="n">Population</span> <span class="n">Matrix</span> <span class="n">Processing</span> <span class="n">Time</span><span class="p">:</span>      
+<span class="n">Real</span> <span class="n">time</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="n">CP</span> <span class="n">time</span> <span class="mf">0.060</span>
+<span class="o">----------------------------------------------</span> 
+         <span class="n">Frequency</span> <span class="n">Matrix</span> <span class="n">Processing</span> <span class="n">Time</span><span class="p">:</span>     
+<span class="n">Real</span> <span class="n">time</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="n">CP</span> <span class="n">time</span> <span class="mf">0.000</span>
+<span class="o">----------------------------------------------</span> 
+        <span class="n">Probability</span> <span class="n">Matrix</span> <span class="n">Processing</span> <span class="n">Time</span><span class="p">:</span>    
+<span class="n">Real</span> <span class="n">time</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="n">CP</span> <span class="n">time</span> <span class="mf">0.000</span>
+<span class="o">----------------------------------------------</span> 
+            <span class="n">Exporting</span> <span class="n">to</span> <span class="o">.</span><span class="n">CSV</span> <span class="n">Time</span><span class="p">:</span>            
+<span class="n">Real</span> <span class="n">time</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="n">CP</span> <span class="n">time</span> <span class="mf">0.010</span>
+<span class="o">----------------------------------------------</span> 
+                  <span class="n">Code</span> <span class="n">Run</span> <span class="n">Time</span><span class="p">:</span>               
+<span class="n">Real</span> <span class="n">time</span> <span class="mi">0</span><span class="p">:</span><span class="mi">00</span><span class="p">:</span><span class="mi">00</span><span class="p">,</span> <span class="n">CP</span> <span class="n">time</span> <span class="mf">0.120</span>
+<span class="o">----------------------------------------------</span> 
+                      <span class="n">End</span>                      
+<span class="o">------------------%%%%%%%%%%------------------</span>
+</pre></div>
 </div>
-<div class="tex2jax_ignore mathjax_ignore section" id="probability-distribution-time-series">
-<h1>Probability distribution time series<a class="headerlink" href="#probability-distribution-time-series" title="Permalink to this headline">¶</a></h1>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>p(0,t)</th>
-      <th>p(1,t)</th>
-      <th>p(2,t)</th>
-      <th>p(3,t)</th>
-      <th>p(4,t)</th>
-      <th>p(5,t)</th>
-      <th>p(6,t)</th>
-      <th>p(7,t)</th>
-      <th>p(8,t)</th>
-      <th>p(9,t)</th>
-      <th>...</th>
-      <th>p(2216,t)</th>
-      <th>p(2217,t)</th>
-      <th>p(2218,t)</th>
-      <th>p(2219,t)</th>
-      <th>p(2220,t)</th>
-      <th>p(2221,t)</th>
-      <th>p(2222,t)</th>
-      <th>p(2223,t)</th>
-      <th>p(2224,t)</th>
-      <th>p(2225,t)</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0.000000</th>
-      <td>0.020</td>
-      <td>0.950</td>
-      <td>0.029</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>0.100200</th>
-      <td>0.038</td>
-      <td>0.909</td>
-      <td>0.051</td>
-      <td>0.001</td>
-      <td>0.000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>0.200401</th>
-      <td>0.057</td>
-      <td>0.870</td>
-      <td>0.067</td>
-      <td>0.005</td>
-      <td>0.000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>0.300601</th>
-      <td>0.068</td>
-      <td>0.835</td>
-      <td>0.088</td>
-      <td>0.008</td>
-      <td>0.000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>0.400802</th>
-      <td>0.084</td>
-      <td>0.807</td>
-      <td>0.096</td>
-      <td>0.009</td>
-      <td>0.003</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>99.599198</th>
-      <td>0.792</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>99.699399</th>
-      <td>0.792</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>99.799599</th>
-      <td>0.792</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>99.899800</th>
-      <td>0.792</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-    <tr>
-      <th>100.000000</th>
-      <td>0.792</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.000</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0.0</td>
-      <td>0</td>
-      <td>0.0</td>
-    </tr>
-  </tbody>
-</table>
-<p>999 rows × 2226 columns</p>
-</div></div></div>
-</div>
-</div>
-<div class="tex2jax_ignore mathjax_ignore section" id="frequency-time-series-teste">
-<h1>Frequency time series  Teste<a class="headerlink" href="#frequency-time-series-teste" title="Permalink to this headline">¶</a></h1>
-<div class="cell tag_remove-input docutils container">
-<div class="cell_output docutils container">
-<div class="output text_html"><div>
-<style scoped>
-    .dataframe tbody tr th:only-of-type {
-        vertical-align: middle;
-    }
-
-    .dataframe tbody tr th {
-        vertical-align: top;
-    }
-
-    .dataframe thead th {
-        text-align: right;
-    }
-</style>
-<table border="1" class="dataframe">
-  <thead>
-    <tr style="text-align: right;">
-      <th></th>
-      <th>Frequency 0</th>
-      <th>Frequency 1</th>
-      <th>Frequency 2</th>
-      <th>Frequency 3</th>
-      <th>Frequency 4</th>
-      <th>Frequency 5</th>
-      <th>Frequency 6</th>
-      <th>Frequency 7</th>
-      <th>Frequency 8</th>
-      <th>Frequency 9</th>
-      <th>...</th>
-      <th>Frequency 2216</th>
-      <th>Frequency 2217</th>
-      <th>Frequency 2218</th>
-      <th>Frequency 2219</th>
-      <th>Frequency 2220</th>
-      <th>Frequency 2221</th>
-      <th>Frequency 2222</th>
-      <th>Frequency 2223</th>
-      <th>Frequency 2224</th>
-      <th>Frequency 2225</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr>
-      <th>0.000000</th>
-      <td>20</td>
-      <td>950</td>
-      <td>29</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>0.100200</th>
-      <td>38</td>
-      <td>909</td>
-      <td>51</td>
-      <td>1</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>0.200401</th>
-      <td>57</td>
-      <td>870</td>
-      <td>67</td>
-      <td>5</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>0.300601</th>
-      <td>68</td>
-      <td>835</td>
-      <td>88</td>
-      <td>8</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>0.400802</th>
-      <td>84</td>
-      <td>807</td>
-      <td>96</td>
-      <td>9</td>
-      <td>3</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>...</th>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-      <td>...</td>
-    </tr>
-    <tr>
-      <th>99.599198</th>
-      <td>792</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>99.699399</th>
-      <td>792</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>99.799599</th>
-      <td>792</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>99.899800</th>
-      <td>792</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-    <tr>
-      <th>100.000000</th>
-      <td>792</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>...</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-      <td>0</td>
-    </tr>
-  </tbody>
-</table>
-<p>999 rows × 2226 columns</p>
-</div></div></div>
 </div>
 <div class="toctree-wrapper compound">
 </div>
@@ -1302,11 +372,11 @@
             
                 <!-- Previous / next buttons -->
 <div class='prev-next-area'> 
-    <a class='left-prev' id="prev-link" href="one_dimension.html" title="previous page">
+    <a class='left-prev' id="prev-link" href="one_point.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
             <p class="prev-next-subtitle">previous</p>
-            <p class="prev-next-title">One Dimension Model</p>
+            <p class="prev-next-title">One-Point Model</p>
         </div>
     </a>
     <a class='right-next' id="next-link" href="one_point_data_process.html" title="next page">
