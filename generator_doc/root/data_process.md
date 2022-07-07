@@ -32,24 +32,27 @@ In order to control the functions' performance, time counters are implemented us
 ------------------%%%%%%%%%%------------------ 
  ************ Program Statistics ************  
                                                
+        Number of Simualtions : 100
+        Number of Neutrons    : 67225
+                                               
                  Reading Time:                 
-Real time 0:00:00, CP time 0.050
+Real time 0:00:00, CP time 0.010
 ---------------------------------------------- 
        Population Matrix Processing Time:      
-Real time 0:00:00, CP time 0.060
+Real time 0:00:05, CP time 5.930
 ---------------------------------------------- 
          Frequency Matrix Processing Time:     
-Real time 0:00:00, CP time 0.000
+Real time 0:00:00, CP time 0.060
 ---------------------------------------------- 
         Probability Matrix Processing Time:    
 Real time 0:00:00, CP time 0.000
 ---------------------------------------------- 
             Exporting to .CSV Time:            
-Real time 0:00:00, CP time 0.010
+Real time 0:00:00, CP time 0.040
 ---------------------------------------------- 
                   Code Run Time:               
-Real time 0:00:00, CP time 0.120
+Real time 0:00:06, CP time 6.040
 ---------------------------------------------- 
                       End                      
-------------------%%%%%%%%%%------------------
+------------------%%%%%%%%%%------------------ 
 ```
