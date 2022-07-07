@@ -2,7 +2,7 @@
 
 All functios used can be find at cpp/one_dimension.cpp
 
-## Neutron Atributes
+## Neutron Attributes
 
 ```{code}
 // One Point

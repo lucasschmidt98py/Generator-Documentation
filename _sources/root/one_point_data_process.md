@@ -6,13 +6,13 @@ $$ t_{birth} < t < t_{death} $$
 
 Besides, by the Week Law of Great Numbers we can say:
 
-$$ p_n(t) = \frac{ S(n , t) }{ \sum_{n = 1} S(n,t) } $$
+$$ p_n(t) = \frac{ S_{n}(t) }{ \sum_{n = 0}^{\infty} S_{n}(t) } $$
 
 Where
 
 * $ p_n(t)      = $ Probability of finding n alive neutrons in time $t$ 
-* $ S(n,t)      = $ Number of simulations with $n$ alive neutrons in time $t$
-* $ \sum_{n = 1} S(n,t) = $ Total number of simulations 
+* $ S_{n}(t)      = $ Number of simulations with $n$ alive neutrons in time $t$
+* $ \sum_{n = 0}^{\infty} S_{n}(t) = $ Total number of simulations 
 
 
 ## Basic Functions 
