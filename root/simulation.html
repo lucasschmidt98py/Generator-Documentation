@@ -418,9 +418,9 @@ title="Print to PDF"
                 
   <section class="tex2jax_ignore mathjax_ignore" id="simulation">
 <h1>Simulation<a class="headerlink" href="#simulation" title="Permalink to this headline">#</a></h1>
-<p>All variables can be found at Variables.h
-All neutron attributes and methods can be find at Neutron.h
-Branching tree generation is made on Branch.C</p>
+<p>All variables can be found at Variables.h</p>
+<p>All neutron attributes fount at Neutron.h. They’re methodes are implemented at Neutron.cpp</p>
+<p>Branching trees functions are on Trees.C</p>
 <section id="general-overview">
 <h2>General Overview<a class="headerlink" href="#general-overview" title="Permalink to this headline">#</a></h2>
 <p>The Computational Branching Process can be seen, as an iterative algorithm where a neutron object produces random amount of other neutron objects at each iteration. The neutron’s offspring is assigned to randomly chosen attributes based on the previous neutron-father attributes. After that, the children-neutrons are allocated in the free space memory region</p>
@@ -478,6 +478,7 @@ Output:
 <p class="admonition-title">Note</p>
 <p>All assigments in the Branching Loop are made in the free space memory position indexed by the <em><strong>free_space</strong></em> variable</p>
 </div>
+<p><img alt="" src="../_images/branching_loop_description.jpg" /></p>
 </section>
 <section id="root-fille-output">
 <h2>ROOT Fille output<a class="headerlink" href="#root-fille-output" title="Permalink to this headline">#</a></h2>
