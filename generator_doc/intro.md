@@ -1,6 +1,6 @@
 # Generator Project Overview
 
-The Generator Project is a Monte Carlo set of codes that generates Branching Trees. The project makes great use of the ROOT framework, both for simulation and processing high amount of data with high performance in C/C++. Since the project was created in the context of the Branching Processes investigation, a set of Jupyter-Notebooks uses Python core designed for analysis and plotting the processed data from the code. The implemented analysis functions follow the well established works in the Theory of the Branching Processes such as {cite}`pazsit2007neutron` , {cite}`athreya2004branching` , {cite}`harris1963theory` and {cite}`feller1971introduction` 
+The Generator Project is a Monte Carlo set of codes that generates neutron data based on  Tree Branching Algorithms. The project makes great use of the [CERN's ROOT framework](https://root.cern.ch/) , both for simulation and processing high amount of data with high performance in C/C++. Since the project was created in the context of the Branching Processes investigation, a set of Jupyter-Notebooks uses Python core designed for analysis and plotting the processed data from the code. The implemented analysis functions follow the well established works in the Theory of the Branching Processes such as {cite}`pazsit2007neutron` , {cite}`athreya2004branching` , {cite}`harris1963theory` and {cite}`feller1971introduction` 
 
 At this moment, following branching models are implemented in the project:
 

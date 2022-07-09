@@ -1,8 +1,10 @@
 # Simulation
 
 All variables can be found at Variables.h
-All neutron attributes and methods can be find at Neutron.h
-Branching tree generation is made on Branch.C
+
+All neutron attributes fount at Neutron.h. They're methodes are implemented at Neutron.cpp
+
+Branching trees functions are on Trees.C
 
 ## General Overview
 
@@ -68,6 +70,8 @@ The tree functions constitute of two loops. The first one , the main loop , iter
 ```{note}
 All assigments in the Branching Loop are made in the free space memory position indexed by the ***free_space*** variable
 ```
+
+![](../img/branching_loop_description.jpg)
 
 ## ROOT Fille output
 
