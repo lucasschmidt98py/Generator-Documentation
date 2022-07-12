@@ -4,7 +4,7 @@ A Neutron is alive at the time t if:
 
 $$ t_{birth} < t < t_{death} $$
 
-Besides, by the Week Law of Great Numbers we can say:
+Besides, by the Weak Law of Great Numbers we can say:
 
 $$ p_n(t) = \frac{ S_{n}(t) }{ \sum_{n = 0}^{\infty} S_{n}(t) } $$
 
