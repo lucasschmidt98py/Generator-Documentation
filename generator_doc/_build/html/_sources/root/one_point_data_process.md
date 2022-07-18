@@ -10,8 +10,8 @@ $$ p_n(t) = \frac{ S_{n}(t) }{ \sum_{n = 0}^{\infty} S_{n}(t) } $$
 
 Where
 
-* $ p_n(t)      = $ Probability of finding n alive neutrons in time $t$ 
-* $ S_{n}(t)      = $ Number of simulations with $n$ alive neutrons in time $t$
+* $ p_n(t)      = $ Probability of finding n alive neutrons at time $t$ 
+* $ S_{n}(t)      = $ Number of simulations with $n$ alive neutrons at time $t$
 * $ \sum_{n = 0}^{\infty} S_{n}(t) = $ Total number of simulations 
 
 
