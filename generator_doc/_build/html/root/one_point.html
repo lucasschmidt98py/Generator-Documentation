@@ -4,13 +4,11 @@
 <html>
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>One-Point Model &#8212; Generator Project</title>
     
-  <!-- Loaded before other Sphinx assets -->
-  <link href="../_static/styles/theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
-<link href="../_static/styles/pydata-sphinx-theme.css?digest=1999514e3f237ded88cf" rel="stylesheet">
+  <link href="../_static/css/theme.css" rel="stylesheet">
+  <link href="../_static/css/index.ff1ffe594081f20da1ef19478df9384b.css" rel="stylesheet">
 
     
   <link rel="stylesheet"
@@ -20,16 +18,20 @@
   <link rel="preload" as="font" type="font/woff2" crossorigin
     href="../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
 
+    
+      
+
+    
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css" />
-    <link rel="stylesheet" href="../_static/styles/sphinx-book-theme.css?digest=62ba249389abaaa9ffc34bf36a076bdc1d65ee18" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../_static/sphinx-book-theme.css?digest=c3fdc42140077d1ad13ad2f1588a4309" />
     <link rel="stylesheet" type="text/css" href="../_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.css" />
     <link rel="stylesheet" type="text/css" href="../_static/sphinx-thebe.css" />
-    <link rel="stylesheet" type="text/css" href="../_static/design-style.b7bb847fb20b106c3d81b95245e65545.min.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
     
-  <!-- Pre-loaded scripts that we'll load fully later -->
-  <link rel="preload" as="script" href="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf">
+  <link rel="preload" as="script" href="../_static/js/index.be7d3bbb2ef33a8344ce.js">
 
     <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
     <script src="../_static/jquery.js"></script>
@@ -37,21 +39,21 @@
     <script src="../_static/doctools.js"></script>
     <script src="../_static/clipboard.min.js"></script>
     <script src="../_static/copybutton.js"></script>
-    <script src="../_static/scripts/sphinx-book-theme.js?digest=f31d14ad54b65d19161ba51d4ffff3a77ae00456"></script>
     <script>let toggleHintShow = 'Click to show';</script>
     <script>let toggleHintHide = 'Click to hide';</script>
     <script>let toggleOpenOnPrint = 'true';</script>
     <script src="../_static/togglebutton.js"></script>
     <script>var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
-    <script src="../_static/design-tabs.js"></script>
-    <script>const THEBE_JS_URL = "https://unpkg.com/thebe@0.8.2/lib/index.js"
-const thebe_selector = ".thebe,.cell"
-const thebe_selector_input = "pre"
-const thebe_selector_output = ".output, .cell_output"
-</script>
-    <script async="async" src="../_static/sphinx-thebe.js"></script>
+    <script src="../_static/sphinx-book-theme.d59cb220de22ca1c485ebbdc042f0030.js"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <script>window.MathJax = {"options": {"processHtmlClass": "tex2jax_process|mathjax_process|math|output_area"}}</script>
-    <script defer="defer" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
+    <script>
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Data Processing" href="data_process.html" />
@@ -63,21 +65,7 @@ const thebe_selector_output = ".output, .cell_output"
     <!-- Google Analytics -->
     
   </head>
-  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="60">
-<!-- Checkboxes to toggle the left sidebar -->
-<input type="checkbox" class="sidebar-toggle" name="__navigation" id="__navigation" aria-label="Toggle navigation sidebar">
-<label class="overlay overlay-navbar" for="__navigation">
-    <div class="visually-hidden">Toggle navigation sidebar</div>
-</label>
-<!-- Checkboxes to toggle the in-page toc -->
-<input type="checkbox" class="sidebar-toggle" name="__page-toc" id="__page-toc" aria-label="Toggle in-page Table of Contents">
-<label class="overlay overlay-pagetoc" for="__page-toc">
-    <div class="visually-hidden">Toggle in-page Table of Contents</div>
-</label>
-<!-- Headers at the top -->
-<div class="announcement header-item noprint"></div>
-<div class="header header-item noprint"></div>
-
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
     
     <div class="container-fluid" id="banner"></div>
 
@@ -86,17 +74,16 @@ const thebe_selector_output = ".output, .cell_output"
     <div class="container-xl">
       <div class="row">
           
-<!-- Sidebar -->
-<div class="bd-sidebar noprint" id="site-navigation">
-    <div class="bd-sidebar__content">
-        <div class="bd-sidebar__top"><div class="navbar-brand-box">
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="../index.html">
       
         <!-- `logo` is deprecated in Sphinx 4.0, so remove this when we stop supporting 3 -->
         
       
       
-      <img src="../_static/logo_tree.jpg" class="logo" alt="logo">
+      <img src="../_static/logo_tree.jpeg" class="logo" alt="logo">
       
       
       <h1 class="site-logo" id="site-title">Generator Project</h1>
@@ -104,18 +91,17 @@ const thebe_selector_output = ".output, .cell_output"
     </a>
 </div><form class="bd-search d-flex align-items-center" action="../search.html" method="get">
   <i class="icon fas fa-search"></i>
-  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Pesquise este livro ..." aria-label="Pesquise este livro ..." autocomplete="off" >
 </form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
-        
-        <ul class="nav bd-sidenav bd-sidenav__home-link">
-            <li class="toctree-l1">
-                <a class="reference internal" href="../intro.html">
-                    Generator Project Overview
-                </a>
-            </li>
-        </ul>
-        <ul class="current nav bd-sidenav">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../intro.html">
+   Generator Project Overview
+  </a>
+ </li>
+</ul>
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="simulation.html">
    Simulation
@@ -153,17 +139,12 @@ const thebe_selector_output = ".output, .cell_output"
 </ul>
 
     </div>
-</nav></div>
-        <div class="bd-sidebar__bottom">
-             <!-- To handle the deprecated key -->
-            
-            <div class="navbar_extra_footer">
-            Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
-            </div>
-            
-        </div>
-    </div>
-    <div id="rtd-footer-container"></div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
 </div>
 
 
@@ -171,162 +152,77 @@ const thebe_selector_output = ".output, .cell_output"
 
 
           
-<!-- A tiny helper pixel to detect if we've scrolled -->
-<div class="sbt-scroll-pixel-helper"></div>
-<!-- Main content -->
-<div class="col py-0 content-container">
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
     
-    <div class="header-article row sticky-top noprint">
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Alternar de navegação" aria-controls="site-navigation"
+                title="Alternar de navegação" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Baixe esta página"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
         
-
-
-
-<div class="col py-1 d-flex header-article-main">
-    <div class="header-article__left">
-        
-        <label for="__navigation"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="right"
-title="Toggle navigation"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-bars"></i>
-  </span>
-
-</label>
-
-        
-    </div>
-    <div class="header-article__right">
-<button onclick="toggleFullScreen()"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="bottom"
-title="Fullscreen mode"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-expand"></i>
-  </span>
-
-</button>
-
-<div class="menu-dropdown menu-dropdown-repository-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Source repositories">
-      <i class="fab fa-github"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="https://github.com/lucasschmidt98py/Generator-Documentation"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Source repository"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fab fa-github"></i>
-  </span>
-<span class="headerbtn__text-container">repository</span>
-</a>
-
-      </li>
-      
-      <li>
-        <a href="https://github.com/lucasschmidt98py/Generator-Documentation/issues/new?title=Issue%20on%20page%20%2Froot/one_point.html&body=Your%20issue%20content%20here."
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Open an issue"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-lightbulb"></i>
-  </span>
-<span class="headerbtn__text-container">open issue</span>
-</a>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-
-<div class="menu-dropdown menu-dropdown-download-buttons">
-  <button class="headerbtn menu-dropdown__trigger"
-      aria-label="Download this page">
-      <i class="fas fa-download"></i>
-  </button>
-  <div class="menu-dropdown__content">
-    <ul>
-      <li>
-        <a href="../_sources/root/one_point.md"
-   class="headerbtn"
-   data-toggle="tooltip"
-data-placement="left"
-title="Download source file"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file"></i>
-  </span>
-<span class="headerbtn__text-container">.md</span>
-</a>
-
-      </li>
-      
-      <li>
-        
-<button onclick="printPdf(this)"
-  class="headerbtn"
-  data-toggle="tooltip"
-data-placement="left"
-title="Print to PDF"
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-file-pdf"></i>
-  </span>
-<span class="headerbtn__text-container">.pdf</span>
-</button>
-
-      </li>
-      
-    </ul>
-  </div>
-</div>
-<label for="__page-toc"
-  class="headerbtn headerbtn-page-toc"
-  
->
-  
-
-<span class="headerbtn__icon-container">
-  <i class="fas fa-list"></i>
-  </span>
-
-</label>
-
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../_sources/root/one_point.md"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Baixar arquivo fonte" data-toggle="tooltip"
+                data-placement="left">.md</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Imprimir em PDF"
+                onclick="printPdf(this)" data-toggle="tooltip" data-placement="left">.pdf</button>
     </div>
 </div>
 
-<!-- Table of contents -->
-<div class="col-md-3 bd-toc show noprint">
-    <div class="tocsection onthispage pt-5 pb-3">
-        <i class="fas fa-list"></i> Contents
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/lucasschmidt98py/Generator-Documentation"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Repositório fonte"><i
+                    class="fab fa-github"></i>repositório</button></a>
+        <a class="issues-button"
+            href="https://github.com/lucasschmidt98py/Generator-Documentation/issues/new?title=Issue%20on%20page%20%2Froot/one_point.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Abra um problema"><i class="fas fa-lightbulb"></i>questão aberta</button></a>
+        
     </div>
-    <nav id="bd-toc-nav" aria-label="Page">
-        <ul class="visible nav section-nav flex-column">
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Modo tela cheia"
+        title="Modo tela cheia"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show noprint">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Conteúdo
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#neutron-class">
    Neutron Class
@@ -362,6 +258,11 @@ title="Print to PDF"
      One Point - Prompt Neutrons - Homogeneous - Infinity Medium
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#one-point-prompt-neutrons-and-delayed-neutrons-homogeneous-infinity-medium">
+     One Point - Prompt Neutrons and Delayed Neutrons - Homogeneous - Infinity Medium
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -371,11 +272,12 @@ title="Print to PDF"
  </li>
 </ul>
 
-    </nav>
-</div>
+            </nav>
+        </div>
     </div>
-    <div class="article row">
-        <div class="col pl-md-3 pl-lg-5 content-container">
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
             <!-- Table of contents that is only displayed when printing the page -->
             <div id="jb-print-docs-body" class="onlyprint">
                 <h1>One-Point Model</h1>
@@ -384,7 +286,7 @@ title="Print to PDF"
                     <div id="jb-print-toc">
                         
                         <div>
-                            <h2> Contents </h2>
+                            <h2> Conteúdo </h2>
                         </div>
                         <nav aria-label="Page">
                             <ul class="visible nav section-nav flex-column">
@@ -423,6 +325,11 @@ title="Print to PDF"
      One Point - Prompt Neutrons - Homogeneous - Infinity Medium
     </a>
    </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#one-point-prompt-neutrons-and-delayed-neutrons-homogeneous-infinity-medium">
+     One Point - Prompt Neutrons and Delayed Neutrons - Homogeneous - Infinity Medium
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -436,59 +343,33 @@ title="Print to PDF"
                     </div>
                 </div>
             </div>
-            <main id="main-content" role="main">
-                
+            
               <div>
                 
-  <section class="tex2jax_ignore mathjax_ignore" id="one-point-model">
-<h1>One-Point Model<a class="headerlink" href="#one-point-model" title="Permalink to this headline">#</a></h1>
-<section id="neutron-class">
-<h2>Neutron Class<a class="headerlink" href="#neutron-class" title="Permalink to this headline">#</a></h2>
+  <div class="tex2jax_ignore mathjax_ignore section" id="one-point-model">
+<h1>One-Point Model<a class="headerlink" href="#one-point-model" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="neutron-class">
+<h2>Neutron Class<a class="headerlink" href="#neutron-class" title="Permalink to this headline">¶</a></h2>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="k">class</span> <span class="nc">Neutron</span> <span class="p">:</span>  <span class="n">public</span> <span class="n">TObject</span> <span class="p">{</span>
     
     <span class="n">private</span><span class="p">:</span>
 
     <span class="n">Int_t</span>                   <span class="n">generation</span><span class="p">;</span>
-    <span class="n">Int_t</span>                   <span class="n">number_of_branches</span><span class="p">;</span>
-
     <span class="n">Float_t</span>                 <span class="n">birth_time</span><span class="p">;</span>
     <span class="n">Float_t</span>                 <span class="n">death_time</span><span class="p">;</span>
     <span class="n">Float_t</span>                 <span class="n">Q</span><span class="p">;</span>  
     <span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Float_t</span><span class="o">&gt;</span>    <span class="n">basic_prob</span><span class="p">;</span>
+
+    <span class="n">Int_t</span>                   <span class="n">index</span><span class="p">;</span>
+    <span class="n">Int_t</span>                   <span class="n">father_index</span><span class="p">;</span>
+    <span class="n">Int_t</span>                   <span class="nb">type</span><span class="p">;</span>
     
-    <span class="n">public</span><span class="p">:</span>
-
-    <span class="o">//</span> <span class="n">Default</span> <span class="n">Constructors</span>
-
-    <span class="n">Neutron</span><span class="p">();</span>
-    <span class="n">virtual</span> <span class="o">~</span><span class="n">Neutron</span><span class="p">();</span>
-
-    <span class="o">//</span> <span class="n">Set</span> <span class="n">Methods</span>
-
-    <span class="n">void</span> <span class="n">set_generation</span><span class="p">(</span><span class="n">Int_t</span> <span class="n">igeneration</span><span class="p">);</span>
-    <span class="n">void</span> <span class="n">set_birth_time</span><span class="p">(</span> <span class="n">Float_t</span> <span class="n">ibirth_time</span> <span class="p">);</span>
-    <span class="n">void</span> <span class="n">set_death_time</span><span class="p">(</span> <span class="n">Float_t</span> <span class="n">ideath_time</span><span class="p">);</span>
-    <span class="n">void</span> <span class="n">set_Q</span><span class="p">(</span> <span class="n">Float_t</span> <span class="n">iQ</span> <span class="p">);</span>
-    <span class="n">void</span> <span class="n">set_basic_prob</span><span class="p">(</span> <span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Float_t</span><span class="o">&gt;</span> <span class="n">basic_prob</span> <span class="p">);</span>
-
-    <span class="o">//</span> <span class="n">Get</span> <span class="n">Methods</span>
-
-    <span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Float_t</span><span class="o">&gt;</span> <span class="n">get_basic_prob</span><span class="p">();</span>    
-    <span class="n">Int_t</span>                <span class="n">get_generation</span><span class="p">();</span>
-    <span class="n">Float_t</span>              <span class="n">get_birth_time</span><span class="p">();</span>
-    <span class="n">Float_t</span>              <span class="n">get_death_time</span><span class="p">();</span>
-    <span class="n">Float_t</span>              <span class="n">get_Q</span><span class="p">();</span>
-
-    <span class="o">//</span> <span class="n">Simulation</span> <span class="n">Methods</span>
-    <span class="n">Float_t</span> <span class="n">time_iter</span><span class="p">(</span><span class="n">Float_t</span> <span class="n">dice</span> <span class="p">,</span> <span class="n">Float_t</span> <span class="n">Q</span><span class="p">);</span>
-    <span class="n">Int_t</span> <span class="n">number_branches</span><span class="p">(</span><span class="n">Float_t</span> <span class="n">dice</span> <span class="p">,</span>  <span class="n">std</span><span class="p">::</span><span class="n">vector</span><span class="o">&lt;</span><span class="n">Float_t</span><span class="o">&gt;</span> <span class="n">basic_prob</span><span class="p">);</span>
-    <span class="n">ClassDef</span><span class="p">(</span><span class="n">Neutron</span> <span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
 <span class="p">};</span>
 </pre></div>
 </div>
-</section>
-<section id="neutron-s-attributes">
-<h2>Neutron’s Attributes<a class="headerlink" href="#neutron-s-attributes" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="neutron-s-attributes">
+<h2>Neutron’s Attributes<a class="headerlink" href="#neutron-s-attributes" title="Permalink to this headline">¶</a></h2>
 <p><em><strong>generation</strong></em>            : Neutron’s generation</p>
 <p><em><strong>number_of_branches</strong></em>    : Neutron’s offspring size</p>
 <p><em><strong>birth_time</strong></em>            : Neutron’s birth time</p>
@@ -499,9 +380,9 @@ title="Print to PDF"
 <p class="admonition-title">Note</p>
 <p>In an homogeneous medium , Q and basic_prob are constant attributes.</p>
 </div>
-</section>
-<section id="set-methods">
-<h2>Set Methods<a class="headerlink" href="#set-methods" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="set-methods">
+<h2>Set Methods<a class="headerlink" href="#set-methods" title="Permalink to this headline">¶</a></h2>
 <p>Set Methods are void functions used for assigning neutron private attributes on the assigning loop. They take as input, the assignment value</p>
 <p><em><strong><code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">set_generation(Int_t</span> <span class="pre">igeneration)</span></code></strong></em></p>
 <p align="center">
@@ -553,9 +434,9 @@ Output:
 </pre></div>
 </div>
 </p>
-</section>
-<section id="get-methods">
-<h2>Get Methods<a class="headerlink" href="#get-methods" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="get-methods">
+<h2>Get Methods<a class="headerlink" href="#get-methods" title="Permalink to this headline">¶</a></h2>
 <p>Get Methods are functions used for getting a neutron private attribute.</p>
 <p><em><strong><code class="docutils literal notranslate"><span class="pre">std::vector&lt;Float_t&gt;</span> <span class="pre">get_basic_prob()</span></code></strong></em></p>
 <p align="center">
@@ -606,9 +487,9 @@ Output:
 </pre></div>
 </div>
 </p>
-</section>
-<section id="write-function">
-<h2>Write Function<a class="headerlink" href="#write-function" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="write-function">
+<h2>Write Function<a class="headerlink" href="#write-function" title="Permalink to this headline">¶</a></h2>
 <p><em><strong><code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">write(</span> <span class="pre">Int_t</span> <span class="pre">number_of_events</span> <span class="pre">,</span> <span class="pre">Int_t</span> <span class="pre">number_of_neutrons</span> <span class="pre">,</span> <span class="pre">Float_t</span> <span class="pre">Q</span> <span class="pre">,</span> <span class="pre">std::vector&lt;Float_t&gt;</span> <span class="pre">basic_prob)</span></code></strong></em>  : Writes the neutron trunk in a .root fille named with the two first decimal houses of each probability in the basic_prob vector in data folder</p>
 <p align="center">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Input :
@@ -625,11 +506,11 @@ Output:
 </pre></div>
 </div>
 </p>
-</section>
-<section id="implemented-trees">
-<h2>Implemented Trees<a class="headerlink" href="#implemented-trees" title="Permalink to this headline">#</a></h2>
-<section id="one-point-prompt-neutrons-homogeneous-infinity-medium">
-<h3>One Point - Prompt Neutrons - Homogeneous - Infinity Medium<a class="headerlink" href="#one-point-prompt-neutrons-homogeneous-infinity-medium" title="Permalink to this headline">#</a></h3>
+</div>
+<div class="section" id="implemented-trees">
+<h2>Implemented Trees<a class="headerlink" href="#implemented-trees" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="one-point-prompt-neutrons-homogeneous-infinity-medium">
+<h3>One Point - Prompt Neutrons - Homogeneous - Infinity Medium<a class="headerlink" href="#one-point-prompt-neutrons-homogeneous-infinity-medium" title="Permalink to this headline">¶</a></h3>
 <p><em><strong><code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">Op_Pr_Hom_Inf_Tree(</span> <span class="pre">TTree</span> <span class="pre">*tree</span> <span class="pre">,</span> <span class="pre">Int_t</span> <span class="pre">number_of_neutrons</span> <span class="pre">,</span> <span class="pre">Float_t</span> <span class="pre">Q</span> <span class="pre">,</span> <span class="pre">std::vector&lt;Float_t&gt;</span> <span class="pre">basic_prob</span> <span class="pre">,</span> <span class="pre">Float_t</span> <span class="pre">simulation)</span></code></strong></em> : Construct a single tree in a simulation</p>
 <p align="center">
 <div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Input :
@@ -660,10 +541,51 @@ Output:
 \[ f_{k}^{son} = f_{k}^{father} \]</div>
 <div class="math notranslate nohighlight">
 \[ Q^{son} = Q^{father} \]</div>
-</section>
-</section>
-<section id="root-fille">
-<h2>ROOT Fille<a class="headerlink" href="#root-fille" title="Permalink to this headline">#</a></h2>
+</div>
+<div class="section" id="one-point-prompt-neutrons-and-delayed-neutrons-homogeneous-infinity-medium">
+<h3>One Point - Prompt Neutrons and Delayed Neutrons - Homogeneous - Infinity Medium<a class="headerlink" href="#one-point-prompt-neutrons-and-delayed-neutrons-homogeneous-infinity-medium" title="Permalink to this headline">¶</a></h3>
+<p><em><strong><code class="docutils literal notranslate"><span class="pre">void</span> <span class="pre">Op_Pr_Hom_Inf_Tree(</span> <span class="pre">TTree</span> <span class="pre">*tree</span> <span class="pre">,</span> <span class="pre">Int_t</span> <span class="pre">number_of_neutrons</span> <span class="pre">,</span> <span class="pre">vector&lt;float&gt;</span> <span class="pre">vec_rate</span> <span class="pre">,</span> <span class="pre">vector&lt;vector&lt;Float_t&gt;&gt;</span> <span class="pre">basic_prob_matrix</span> <span class="pre">,Int_t</span> <span class="pre">first_type,</span> <span class="pre">Int_t</span> <span class="pre">simulation</span></code></strong></em> : Construct a single tree in a simulation</p>
+<p align="center">
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>Input :
+    TTree  *tree                                - Pointer of a tree
+
+    Int_t   number_of_neutrons                  - Maximum number of simulated neutrons
+
+    Float_t vec_rate                            - Vector containing the medium intensity rate and precursor decay rate  
+
+    vector&lt;vector&lt;Float_t&gt;&gt; basic_prob_matrix   - Basic Probability matrix for neutron and precursors
+
+    Int_t simulation                            - Simulation Index
+
+Output:
+    void
+</pre></div>
+</div>
+</p>
+<p><em>Model’s Description :</em></p>
+<p>This tree reproduces the model described in <span id="id1">[<a class="reference internal" href="../intro.html#id7">PazsitPal07</a>]</span> Cap 5.5. In this model, a particle <span class="math notranslate nohighlight">\(T_{0}\)</span> induces a reaction with intensity Q generating other <span class="math notranslate nohighlight">\(n_i\)</span> particles of type <span class="math notranslate nohighlight">\(T_i\)</span> , with <span class="math notranslate nohighlight">\( i \in \{1 , 2 , 3 , \dots \} \)</span>  and with probability <span class="math notranslate nohighlight">\( f_{n}^{i} \)</span></p>
+<p><em>Model’s Hypothesis :</em></p>
+<p>Independence:</p>
+<div class="math notranslate nohighlight">
+\[ P( \nu_{0} = k_0 , \nu_1 = k_1 , \dots ) = \Pi_{ i = 0}^{ \text{Number of Groups} } f^{i}( \nu = k_i) \]</div>
+<p>One Point:</p>
+<div class="math notranslate nohighlight">
+\[ t_{death}^{son} = t_{death}^{father} + \frac{ -log(\xi)  }{Q}  \]</div>
+<p>Prompt Neutron :</p>
+<div class="math notranslate nohighlight">
+\[ t_{birth}^{son} = t_{death}^{father} \]</div>
+<p>Delayed Neutron:</p>
+<div class="math notranslate nohighlight">
+\[ t_{birth}^{son} = t_{death}^{father} + \frac{ -log(\xi) }{ \lambda_{i} } \]</div>
+<p>Homogeneous Medium Hypothesis:</p>
+<div class="math notranslate nohighlight">
+\[ f_{k}^{son} = f_{k}^{father} \]</div>
+<div class="math notranslate nohighlight">
+\[ Q^{son} = Q^{father} \]</div>
+</div>
+</div>
+<div class="section" id="root-fille">
+<h2>ROOT Fille<a class="headerlink" href="#root-fille" title="Permalink to this headline">¶</a></h2>
 <p>The fille is located in the data folder and is used on previous processing.</p>
 <p>File Structure:</p>
 <p align="center">
@@ -689,8 +611,8 @@ Columns : Generation , Birth Time , Death Time , Simulation Index
 </tr>
 </tbody>
 </table>
-</section>
-</section>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -714,11 +636,9 @@ Columns : Generation , Birth Time , Death Time , Simulation Index
 
               </div>
               
-            </main>
-            <footer class="footer-article noprint">
-                
-    <!-- Previous / next buttons -->
-<div class='prev-next-area'>
+            
+                <!-- Previous / next buttons -->
+<div class='prev-next-area'> 
     <a class='left-prev' id="prev-link" href="simulation.html" title="previous page">
         <i class="fas fa-angle-left"></i>
         <div class="prev-next-info">
@@ -734,28 +654,24 @@ Columns : Generation , Birth Time , Death Time , Simulation Index
     <i class="fas fa-angle-right"></i>
     </a>
 </div>
-            </footer>
+            
         </div>
     </div>
-    <div class="footer-content row">
-        <footer class="col footer"><p>
-  
-    By Lucas Schmidt Ferreira de Araujo and Nilson Costa Roberty<br/>
-  
-      &copy; Copyright 2022.<br/>
-</p>
-        </footer>
-    </div>
+    <footer class="footer">
+  <p>
     
-</div>
+      De Lucas Schmidt Ferreira de Araujo and Nilson Costa Roberty<br/>
+    
+        &copy; direito autoral 2021.<br/>
+  </p>
+</footer>
+</main>
 
 
       </div>
     </div>
   
-  <!-- Scripts loaded after <body> so the DOM is not blocked -->
-  <script src="../_static/scripts/pydata-sphinx-theme.js?digest=1999514e3f237ded88cf"></script>
-
+  <script src="../_static/js/index.be7d3bbb2ef33a8344ce.js"></script>
 
   </body>
 </html>

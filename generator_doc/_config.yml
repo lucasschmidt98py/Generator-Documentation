@@ -3,7 +3,7 @@
 
 title: Generator Project
 author: Lucas Schmidt Ferreira de Araujo and Nilson Costa Roberty
-logo: img/logo_tree.jpg
+logo: img/logo_tree.jpeg
 
 # Force re-execution of notebooks on each build.
 # See https://jupyterbook.org/content/execute.html

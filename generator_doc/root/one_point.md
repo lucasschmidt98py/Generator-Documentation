@@ -9,40 +9,15 @@ class Neutron :  public TObject {
     private:
 
     Int_t                   generation;
-    Int_t                   number_of_branches;
-
     Float_t                 birth_time;
     Float_t                 death_time;
     Float_t                 Q;  
     std::vector<Float_t>    basic_prob;
+
+    Int_t                   index;
+    Int_t                   father_index;
+    Int_t                   type;
     
-    public:
-
-    // Default Constructors
-
-    Neutron();
-    virtual ~Neutron();
-
-    // Set Methods
-
-    void set_generation(Int_t igeneration);
-    void set_birth_time( Float_t ibirth_time );
-    void set_death_time( Float_t ideath_time);
-    void set_Q( Float_t iQ );
-    void set_basic_prob( std::vector<Float_t> basic_prob );
-
-    // Get Methods
-
-    std::vector<Float_t> get_basic_prob();    
-    Int_t                get_generation();
-    Float_t              get_birth_time();
-    Float_t              get_death_time();
-    Float_t              get_Q();
-
-    // Simulation Methods
-    Float_t time_iter(Float_t dice , Float_t Q);
-    Int_t number_branches(Float_t dice ,  std::vector<Float_t> basic_prob);
-    ClassDef(Neutron , 1);
 };
 ```
 
@@ -234,6 +209,56 @@ Homogeneous Medium Hypothesis:
 $$ f_{k}^{son} = f_{k}^{father} $$
 
 $$ Q^{son} = Q^{father} $$
+
+### One Point - Prompt Neutrons and Delayed Neutrons - Homogeneous - Infinity Medium
+
+***`void Op_Pr_Hom_Inf_Tree( TTree *tree , Int_t number_of_neutrons , vector<float> vec_rate , vector<vector<Float_t>> basic_prob_matrix ,Int_t first_type, Int_t simulation`*** : Construct a single tree in a simulation
+
+<p align="center">
+    
+    Input :
+        TTree  *tree                                - Pointer of a tree
+
+        Int_t   number_of_neutrons                  - Maximum number of simulated neutrons
+    
+        Float_t vec_rate                            - Vector containing the medium intensity rate and precursor decay rate  
+    
+        vector<vector<Float_t>> basic_prob_matrix   - Basic Probability matrix for neutron and precursors
+
+        Int_t simulation                            - Simulation Index
+    
+    Output:
+        void
+</p>
+
+*Model's Description :*
+
+This tree reproduces the model described in {cite}`pazsit2007neutron` Cap 5.5. In this model, a particle $T_{0}$ induces a reaction with intensity Q generating other $n_i$ particles of type $T_i$ , with $ i \in \{1 , 2 , 3 , \dots \} $  and with probability $ f_{n}^{i} $
+
+*Model's Hypothesis :*
+
+Independence:
+
+$$ P( \nu_{0} = k_0 , \nu_1 = k_1 , \dots ) = \Pi_{ i = 0}^{ \text{Number of Groups} } f^{i}( \nu = k_i) $$
+
+One Point:
+
+$$ t_{death}^{son} = t_{death}^{father} + \frac{ -log(\xi)  }{Q}  $$
+
+Prompt Neutron :
+
+$$ t_{birth}^{son} = t_{death}^{father} $$
+
+Delayed Neutron:
+
+$$ t_{birth}^{son} = t_{death}^{father} + \frac{ -log(\xi) }{ \lambda_{i} } $$
+
+Homogeneous Medium Hypothesis:
+
+$$ f_{k}^{son} = f_{k}^{father} $$
+
+$$ Q^{son} = Q^{father} $$
+
 
 ## ROOT Fille 
 
